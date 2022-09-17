@@ -39,11 +39,31 @@ public class arraySort {
 			}
 			arr[pos] = item;
 		}
-		
+		System.out.println("\n ");
 		for(int i = 0; i < 5; i++) {
 			System.out.println(arr[i] + " ");
 		}
 		
+		//stats
+		double sum = 0;
+		for(int i = 0; i < 5; i++){
+			sum = sum + arr[i];
+		}
+
+		System.out.println("--------------------------------");
+
+		double mean = sum/5;
+		int median = arr[2];
+		double top = 0;
+		for(int i = 0; i < 5; i++){
+			top = top + Math.pow((arr[i]-mean),2);
+		}
+		double std = Math.sqrt(top/5);
+
+		System.out.println("mean: " + mean);
+		System.out.println("meadian: " + median);
+		System.out.printf("standard deviation: %.2f",std);
+
 	}
 
 }
